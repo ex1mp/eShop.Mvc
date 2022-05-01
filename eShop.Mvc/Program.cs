@@ -1,14 +1,21 @@
+﻿using eShop.Mvc.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using eShop.Mvc.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("IdentityContextConnection");;
+var connectionString = builder.Configuration.GetConnectionString("IdentityContextConnection"); ;
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-    options.UseSqlServer(connectionString));;
+    options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IdentityContext>();;
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequiredLength = 5;   // минимальная длина
+    options.Password.RequireNonAlphanumeric = false;   // требуются ли не алфавитно-цифровые символы
+    options.Password.RequireLowercase = false; // требуются ли символы в нижнем регистре
+    options.Password.RequireUppercase = false; // требуются ли символы в верхнем регистре
+    options.Password.RequireDigit = false; // требуются ли цифры
+}).AddEntityFrameworkStores<IdentityContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -27,7 +34,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 app.UseAuthorization();
 
