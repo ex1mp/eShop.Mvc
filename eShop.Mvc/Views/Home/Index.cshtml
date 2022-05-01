@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
 <img class="wave" src="~/img/back-dark.png">
 
-<div id="carouselExampleIndicators" class=" carousel carousel-dark carousel-fade slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class=" carousel @*carousel-dark*@ @*carousel-fade*@ slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -41,79 +41,145 @@
     </button>
 </div>
 <div>
-    <section>
-        <ul class="tabs1">
-            <li>Amazing place</li>
-            <li>Best service</li>
-            <li>Quality food</li>
-        </ul>
-        <div class="container1 ">
-            <div class="content1">
-                <div class="box">
-					<img src="~/img/squad.webp">
-					<div class="content" style="margin-left: 15px; margin-top: 18px;">
-						<h3>Squad</h3>
-                        <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
-						<h4 style="position: absolute; right: 0; margin-top: -35px; margin-right: 30px;">25 $</h4>
-					</div>
-				</div>
-                <div class="box">
-					<img src="~/img/squad.webp">
-					<div class="content" style="margin-left: 15px; margin-top: 18px;">
-						<h3>Squad</h3>
-                        <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
-						<h4 style="position: absolute; right: 0; margin-top: -35px; margin-right: 30px;">25 $</h4>
-					</div>
-				</div>
-                <div class="box">
-					<img src="~/img/squad.webp">
-					<div class="content" style="margin-left: 15px; margin-top: 18px;">
-						<h3>Squad</h3>
-                        <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
-						<h4 style="position: absolute; right: 0; margin-top: -35px; margin-right: 30px;">25 $</h4>
-					</div>
-				</div>
-            </div>
-            <div class="content1">
-                <div class="card">
-                    <div class="card-header">
-                        Рекомендуемые
+    <div class="row" style="margin-top: 60px;">
+        <section class="col-md-8 col">
+            <ul class="tabs1">
+                <li>New</li>
+                <li>Leaders of sells</li>
+                <li>Upcoming</li>
+            </ul>
+            <div class="container1">
+                <div class="content1">
+                    <div class="box">
+                        <img src="~/img/squad.webp">
+                        <div class="content" style="margin-left: 25px; margin-top: 10px;">
+                            <div class="navbar-brand">Squad</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px;color: #999; margin-right: 30px;">25 $</h4>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Особое обращение с заголовком</h5>
-                        <p class="card-text">С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.</p>
-                        <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                    <div class="box">
+                        <img src="~/img/prototype-2.jpg">
+                        <div class="content" style="margin-left: 25px; margin-top: 10px;">
+                            <div class="navbar-brand">Prototype 2</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px;color: #999; margin-right: 30px;">25 $</h4>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="~/img/terraformers.jpg">
+                        <div class="content" style="margin-left: 25px; margin-top: 10px;">
+                            <div class="navbar-brand">Terraformers</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px; color: #999; margin-right: 30px;">25 $</h4>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="~/img/squad.webp">
+                        <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                            <div class="navbar-brand">Squad</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px;  margin-right: 30px;">25 $</h4>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="~/img/squad.webp">
+                        <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                            <div class="navbar-brand">Squad</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px; margin-right: 30px;">25 $</h4>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="~/img/squad.webp">
+                        <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                            <div class="navbar-brand">Squad</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px; margin-right: 30px;">25 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="content1">
+                    <div class="card">
+                        <div class="card-header">
+                            Рекомендуемые
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Особое обращение с заголовком</h5>
+                            <p class="card-text">С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.</p>
+                            <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content1">
+                    <div class="card">
+                        <div class="card-header">
+                            Рекомендуемые
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Особое обращение с заголовком</h5>
+                            <p class="card-text">С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.</p>
+                            <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content1">
+                    <div class="box">
+                        <img src="~/img/squad.webp">
+                        <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                            <div class="navbar-brand">Squad</div>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
+                            <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">R-18</h5>
+                            <h4 style="position: absolute; right: 0; margin-top: -60px; margin-right: 30px;">25 $</h4>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="content1">
-                <div class="box">
-					<img src="~/img/squad.webp">
-					<div class="content" style="margin-left: 15px; margin-top: 18px;">
-						<h3>Squad</h3>
-                        <h5 style="text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;">Action, Strategy</h5>
-						<h4 style="position: absolute; right: 0; margin-top: -35px; margin-right: 30px;">25 $</h4>
-					</div>
-				</div>
-                <div class="box">
-					<img src="~/img/avatar.svg">
-					<div class="content" style="margin-left: 15px; margin-top: 15px;">
-						<h3>Samsung Mobile</h3>
-						<h4>Price: $250</h4>
-					</div>
-				</div>
-                <div class="box">
-					<img src="~/img/avatar.svg">
-					<div class="content" style="margin-left: 15px; margin-top: 15px;">
-						<h3>Samsung Mobile</h3>
-						<h4>Price: $250</h4>
-					</div>
-				</div>
-            </div>
+        </section>
+        <div class=" col">
+            <section class="col-md-12 col" style="margin-top: 2.5rem;">
+                <h4>Sales</h4>
+                @for (int i = 1; i < 5; i++)
+                {
+                    <div class="container1">
+                        <div class="content2">
+                            <div class="box-small">
+                                <img src="~/img/prototype-2.jpg">
+                                <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                                    <div class="navbar-brand">Sasdasd</div>
+                                    <h6 style="position: absolute; right: 0; margin-top: -30px; margin-right: 30px;">25 $</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </section>
+            <section class="col-md-12 col" style="margin-top: 2.5rem;">
+                <h4>Popular</h4>
+                @for (int i = 0; i < 5; i++)
+                {
+                    <div class="container1">
+                        <div class="content2">
+                            <div class="box-small">
+                                <img src="~/img/prototype-2.jpg">
+                                <div class="content" style="margin-left: 15px; margin-top: 10px;">
+                                    <div class="navbar-brand">Sasdasd</div>
+                                    <h6 style="position: absolute; right: 0; margin-top: -30px; margin-right: 30px;">25 $</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </section>
         </div>
-    </section>
+    </div>
 </div>
-
 <img class="wave1" src="~/img/back-dark.png">
 
 <script>

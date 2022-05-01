@@ -1,38 +1,40 @@
 ﻿section {
-    width: 65%;
-    margin: 6.5rem auto 0;
+    width: 55%;
+    margin-top: 6rem;
+    /*margin: 6.5rem auto 0;*/
 }
 
 .tabs1 {
-list-style: none;
-display: flex;
-justify-content: space-around;
-margin-bottom: 3rem;
+    list-style: none;
+    margin-left: -2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
 }
 
-.tabs1 li {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #263238;
-    cursor: pointer;
-    position: relative;
-}
+    .tabs1 li {
+        font-size: 1.5rem;
+        /*  font-weight: 600;*/
+        color: #263238;
+        cursor: pointer;
+        position: relative;
+    }
 
-.tabs1 li::after {
-    content: '';
-    position:absolute;
-    bottom: -20%;
-    left: -3%;
-    width: 0%;
-    height: 5px;
-    background: #106cfc;
-    border-radius: 30px;
-    transition: width 0.8s ease;
-}
+        .tabs1 li::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -3%;
+            width: 0%;
+            height: 5px;
+            background: #106cfc;
+            border-radius: 30px;
+            transition: width 0.8s ease;
+        }
 
-.tabs1 li.active::after {
-    width: 104%;
-}
+        .tabs1 li.active::after {
+            width: 104%;
+        }
 
 /*.content1 img {
     width: 100%;
@@ -55,18 +57,19 @@ margin-bottom: 3rem;
     display: none;
 }
 
-.content1 p {
-    font-size: 1.5rem;
-    text-align: center;
-    width: 70%;
-    margin: 1rem auto 0rem;
-    color: #222;
-}
+/*    .content1 p {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 70%;
+        margin: 1rem auto 0rem;
+        color: #222;
+    }*/
 
 @keyframes fade {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
