@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - eShop.Mvc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
    @* <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" />*@
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/eShop.Mvc.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -24,6 +25,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
