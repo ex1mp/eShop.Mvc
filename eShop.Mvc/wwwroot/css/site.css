@@ -25,7 +25,7 @@ html {
     top: 0;
     bottom: 0;
     left: 0;
-    height: 500px;
+    height: 510px;
     width: 100%;
     z-index: -1;
 }
@@ -79,8 +79,8 @@ html {
     width: 100%;
     height: 60px;
     overflow: hidden;
-    margin-bottom: 20px;
-    margin-top: 1rem;
+    margin-bottom: 10px;
+    
     background: #fff;
     transition: all .6s ease;
     border-radius: 10px;

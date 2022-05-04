@@ -33,17 +33,17 @@
             </div>*@
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <div class="arrow-2" style="transform: scale(-1, 1);">
-    <div class="arrow-2-top"></div>
-    <div class="arrow-2-bottom"></div>
-</div>
+        <div class="arrow-2" style="transform: scale(-1, 1);">
+            <div class="arrow-2-top"></div>
+            <div class="arrow-2-bottom"></div>
+        </div>
         <span class="visually-hidden">Предыдущий</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <div class="arrow-2">
-    <div class="arrow-2-top"></div>
-    <div class="arrow-2-bottom"></div>
-</div>
+            <div class="arrow-2-top"></div>
+            <div class="arrow-2-bottom"></div>
+        </div>
         <span class="visually-hidden">Следующий</span>
     </button>
 </div>
@@ -55,7 +55,7 @@
                 <li>Leaders of sells</li>
                 <li>Upcoming</li>
             </ul>
-            <hr style="color: #999; margin-top: -1.3rem;"/>
+            <hr style="color: #999; margin-top: -1.3rem;" />
             <div class="container1" style=" margin-top: 1.3rem;">
                 <div class="content1">
                     <div class="box">
@@ -154,12 +154,15 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
         <div class=" col">
             <section class="col-md-12 col" style="margin-top: 2.5rem;">
-                <h4>Sales</h4><h8 class="upper-text">from 40%</h8>
-                @for (int i = 1; i < 5; i++)
+                <div class="row" style="margin-bottom: 10px;">
+                    <h4 class="col">Sales</h4><h8 class="upper-text col">from 40%</h8>
+                </div>
+                @for (int i = 0; i < 5; i++)
                 {
                     <div class="container1">
                         <div class="content2">
@@ -174,11 +177,11 @@
                         </div>
                     </div>
                 }
-                <a style="margin-top: -5rem; margin-left: 8rem; text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;" href="http://estiloasertivo.blogspot.com.es/">More games on sales</a>
+                @* <a style="margin-top: -5rem; margin-left: 8rem; text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;" href="http://estiloasertivo.blogspot.com.es/">More games on sales</a>*@
             </section>
             <section class="col-md-12 col" style="margin-top: 2rem;">
-                <h4>Popular</h4>
-                @for (int i = 0; i < 4; i++)
+                <h4 style="margin-bottom: 18px;">Last sales</h4>
+                @for (int i = 0; i < 5; i++)
                 {
                     <div class="container1">
                         <div class="content2">
@@ -192,48 +195,49 @@
                         </div>
                     </div>
                 }
-                <a style="margin-top: -5rem; margin-left: 8rem; text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;" href="http://estiloasertivo.blogspot.com.es/">More games on sales</a>
+                @*                <a style="margin-top: -5rem; margin-left: 8rem; text-decoration: none; color: #999; font-size: 0.9rem;transition: .3s;" href="http://estiloasertivo.blogspot.com.es/">More games on sales</a>*@
             </section>
         </div>
     </div>
+    <a style="margin-left: 23rem; font-weight: bold;"   href="http://estiloasertivo.blogspot.com.es/">3000 more games <i class="arrow down" ></i> </a>
 </div>
 <img class="wave1" src="~/img/back-dark.png">
 <div class="row about-company">
     <div class="col col-md-3">
         <div class="row">
-        <img src="~/img/home/key.svg" class="footer-img col-4">
-        <p class="col-8 footer-txt-about ">License keys from official publishers</p>
-         </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="row">
-        <img src="~/img/home/gaika.svg" class="footer-img col-4">
-        <p class="col-8 footer-txt-about ">Guaranteed technical support for your purchase</p>
-         </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="row">
-        <img src="~/img/home/procent.svg" class="footer-img col-4">
-        <p class="col-8 footer-txt-about ">Regular promotions, discounts and bonuses</p>
-         </div>
-    </div>
-    <div class="col col-md-3">
-        <div class="row">
-        <img src="~/img/home/otzivy.svg" class="col-4 footer-img">
-        <p class="col-8 footer-txt-about ">Over 9000 positive reviews from real customers</p>
+            <img src="~/img/home/key.svg" class="footer-img col-4">
+            <p class="col-8 footer-txt-about ">License keys from official publishers</p>
         </div>
     </div>
-    <hr style="color: #999; margin-top: 4rem;"/>
+    <div class="col col-md-3">
+        <div class="row">
+            <img src="~/img/home/gaika.svg" class="footer-img col-4">
+            <p class="col-8 footer-txt-about ">Guaranteed technical support for your purchase</p>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="row">
+            <img src="~/img/home/procent.svg" class="footer-img col-4">
+            <p class="col-8 footer-txt-about ">Regular promotions, discounts and bonuses</p>
+        </div>
+    </div>
+    <div class="col col-md-3">
+        <div class="row">
+            <img src="~/img/home/otzivy.svg" class="col-4 footer-img">
+            <p class="col-8 footer-txt-about ">Over 9000 positive reviews from real customers</p>
+        </div>
+    </div>
+    <hr style="color: #999; margin-top: 4rem;" />
     <div class="col-6">
         <p class="footer-txt" style="margin-bottom: 5px;">© 2022 eShop</p>
         <p class="footer-txt-privacy">All rights reserved. Full or partial copying of site materials without the consent of the administration is prohibited!</p>
         <p class="footer-txt-privacy">All game names, company names, trademarks, logos and game materials are the property of their respective owners.</p>
     </div>
     <div class="col-6 row" style="justify-content: space-around; margin-top: 3rem;">
-       <a class="col-3 col" style="color: #999; position: center;">Agreement</a>
-       <a class="col-3 col" style="color: #999; position: center;">For partners</a>
-       <a class="col-3 col" style="color: #999; position: center;">Support</a>
-       <a class="col-3 col" style="color: #999; position: center;">About the site</a>
+        <a class="col-3 col" style="color: #999; position: center;">Agreement</a>
+        <a class="col-3 col" style="color: #999; position: center;">For partners</a>
+        <a class="col-3 col" style="color: #999; position: center;">Support</a>
+        <a class="col-3 col" style="color: #999; position: center;">About the site</a>
     </div>
 </div>
 <script>
