@@ -48,7 +48,8 @@ form {
 
 .login-content h2 {
     margin: 15px 0;
-    color: #333;
+    color: #999;
+    border: #2596be;
     text-transform: uppercase;
     font-size: 2.9rem;
 }
@@ -98,7 +99,7 @@ form {
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background-color: #106cfc;
+    background: linear-gradient( #ff5454, #ff7c3c);
     transition: .4s;
 }
 
@@ -120,7 +121,7 @@ form {
 }
 
 .input-div.focus > .i > i {
-    color: #106cfc;
+    color: #2596be;
 }
 
 input:invalid {

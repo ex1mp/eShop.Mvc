@@ -2,12 +2,46 @@
     ViewData["Title"] = "Cart";
 }
 
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+@*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
 <link rel="stylesheet" href="~/css/Cart.css" asp-append-version="true" />
-<h2 style="margin-left: 14rem; margin-top: 2.5rem; color:#f8f4f4;">Cart</h2>
+<h2 style="margin-left: 14rem; margin-top: 2.5rem;/* color:#f8f4f4;*/">Cart</h2>
 <div class="cont">
     <div class="large-box col-8">
+        <div class="content1">
+            <div class="box">
+                <img src="~/img/squad.webp">
+                <div style="margin-left: 25px; margin-top: 0.4rem;">
+                    <div class="navbar-brand">Squad</div>
+                    <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">Action, Strategy</h5>
+                    <div class="age-rating">R-18</div>
+                    <h4 style="/*position: absolute; right: 0;*/ margin-top: -3.25rem;color: #999; margin-left: 36rem;">25 $</h4>
+                    @*  <img class="recycle" src="~/img/trash.png" style="width: 1.5rem; height: 1.5rem; margin-left: 41rem; margin-top: -4.5rem;" >*@
+                    <div class="close-container">
+                        <div class="leftright"></div>
+                        <div class="rightleft"></div>
+                    </div>
+                </div>
+
+            </div>
+             <div class="box">
+                <img src="~/img/squad.webp">
+                <div style="margin-left: 25px; margin-top: 0.4rem;">
+                    <div class="navbar-brand">Squad</div>
+                    <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">Action, Strategy</h5>
+                    <div class="age-rating">R-18</div>
+                    <h4 style="/*position: absolute; right: 0;*/ margin-top: -3.25rem;color: #999; margin-left: 36rem;">25 $</h4>
+                    @*  <img class="recycle" src="~/img/trash.png" style="width: 1.5rem; height: 1.5rem; margin-left: 41rem; margin-top: -4.5rem;" >*@
+                    <div class="close-container">
+                        <div class="leftright"></div>
+                        <div class="rightleft"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+         <input type="submit" class="btn btn-outline-primary col-12" style="width: 100%;" value="Pay">
     </div>
-  @*  <input type="submit" class="btn btn-outline-primary" value="Login">*@
+   
+    @*  <input type="submit" class="btn btn-outline-primary" value="Login">*@
 </div>
-<input type="submit" class="btn btn-outline-primary" style="margin-left:12rem;"value="Pay">
+
