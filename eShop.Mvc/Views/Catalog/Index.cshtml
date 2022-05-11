@@ -10,6 +10,8 @@
             <hr style="color: #999; margin-top: -3rem;" />
             <div class="container1" style=" margin-top: 1.3rem;">
                 <div class="content1">
+                    @for (int i = 0; i < 10; i++)
+                    {
                     <div class="box">
                         <img src="~/img/squad.webp">
                         <div style="margin-left: 25px; margin-top: 0.4rem;">
@@ -20,29 +22,53 @@
                             <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">25 $</h4>
                         </div>
                     </div>
-                     </div>
+                    }
+                </div>
             </div>
         </section>
-        <div class=" col">
-            <section class="col-md-12 col" style="margin-top: 2.5rem;">
-                <div class="row" style="margin-bottom: 10px;">
-                    <h4 class="col">Sales</h4><h8 class="upper-text col">from 40%</h8>
+        <div class="col col-md-4">
+            <section class="col-12 box-filter col" style="margin-top: -1.5rem;">
+                <div class="row col-12">
+                    <h5 style="text-align: center;margin-top: 0.8rem; position: relative;">Price</h5>
                 </div>
-                @for (int i = 0; i < 5; i++)
-                {
-                    <div class="container1">
-                        <div class="content2">
-                            <div class="box-small">
-                                <img src="~/img/prototype-2.jpg">
-                                <div class="content" style="margin-left: 15px; margin-top: 10px;">
-                                    <div class="navbar-brand">Sasdasd</div>
-                                    <span class="rec-sale-small">-25%</span>
-                                    <h6 style="position: absolute; right: 0; margin-top: -1.3rem; margin-right: 30px;color: #999;">25 $</h6>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                    <div class="col col-6">
+                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
+                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 0" required="required">
                     </div>
-                }
+                    <div class="col col-6">
+                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
+                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 500" required="required">
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Genres</h5>
+                </div>
+                <div class="col-12 row" style="margin-left:2rem;">
+                    @for (int i = 0; i < 6; i++)
+                    {
+                        <div class="form-check col col-6" style="/*margin-top: 1.5rem;*/">
+                            <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" r>
+                            <label class="form-check-label" for="flexCheckDefault" style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">
+                                I have read
+                            </label>
+                        </div>
+                    }
+                </div>
+                <div class="row col-12">
+                    <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Released</h5>
+                </div>
+                <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                    <div class="col col-6">
+                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
+                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 2001" required="required">
+                    </div>
+                    <div class="col col-6">
+                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
+                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 2022" required="required">
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-outline-primary col-12" style="margin-top: 2rem;" value="Search">
             </section>
         </div>
     </div>

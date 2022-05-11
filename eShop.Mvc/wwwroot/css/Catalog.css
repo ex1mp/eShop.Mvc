@@ -184,3 +184,31 @@ a:hover {
 a:active {
     color: #68bcdc;
 }
+
+.box-filter {
+  /*  display: flex;*/
+    width: 100%;
+    margin-top: 2rem;
+   
+    overflow: hidden;
+    /*  margin-bottom: 20px;*/
+    background: #fff;
+    /*   transition: all .6s ease;*/
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn {
+    display: block;
+    width: 45%;
+    height: 50px;
+    border-radius: 25px;
+    border-color: #ff7c3c;
+    outline: none;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: .5s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
