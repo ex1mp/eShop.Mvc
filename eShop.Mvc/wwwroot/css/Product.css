@@ -11,6 +11,7 @@
 
 .about-box {
     display: flex;
+    position: relative;
     width: 390px;
     margin-top: 30px;
     background-color: #403c3c;
@@ -35,6 +36,7 @@
     display: flex;
     margin-top: 15px;
     border-radius: 15px;
+    
 }
 
 .about-box2 {
@@ -74,4 +76,32 @@
 
 .about-company {
     margin-top: 8rem;
+}
+
+.btn-outline-primary {
+    color: White;
+    border-color: #0894ec;
+    background-color: #0894ec;
+    height: 70px;
+   /* border-radius: 25px;*/
+}
+
+.promo {
+    height: 85px;
+    margin-left: 14px;
+    width: 85px;
+    border: solid;
+    text-align: center;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #0496e6, #04b49c);
+    margin-bottom: 20px;
+}
+
+.inner-text {
+    margin-top: 19px;
+    background: linear-gradient(to left, #0496e6, #04b49c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    font-weight:500;
 }
