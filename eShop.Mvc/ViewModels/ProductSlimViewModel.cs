@@ -16,5 +16,6 @@ namespace eShop.Mvc.ViewModels
 
         public AgeRating AgeRating { get; set; }
 
+        public string imageDataURL { get; set; }
     }
 }

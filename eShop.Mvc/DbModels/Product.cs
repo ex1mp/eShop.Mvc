@@ -35,5 +35,10 @@ namespace eShop.Mvc.DbModels
 
         [ForeignKey(nameof(PublisherId))]
         public Company Publisher { get; set; }
+
+        public Guid ImagesId { get; set; }
+
+        [ForeignKey(nameof(ImagesId))]
+        public ProductImages Images { get; set; }
     }
 }

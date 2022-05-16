@@ -7,6 +7,14 @@ namespace eShop.Mvc.Controllers
     {
         public IActionResult Index(string productId)
         {
+            using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/elden-ring.jpg", FileMode.Open);
+            using var ms = new MemoryStream();
+            stream.CopyTo(ms);
+
+            var img = ms.ToArray();
+            string imageBase64Data = Convert.ToBase64String(img);
+
+            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
             var model = new ProductViewModel()
             {
                 ProductId = new Guid("00000000-0000-0000-0000-000000000000"),
@@ -47,7 +55,8 @@ namespace eShop.Mvc.Controllers
                     GraphicCard = "NVIDIA GEFORCE GTX 1060 3 GB or AMD RADEON RX 580 4 GB",
                     DiretX = "Version 12",
                     Hdd = "60 GB"
-                }
+                },
+                imageDataURL = imageDataURL
 
             };
 
