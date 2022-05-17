@@ -1,4 +1,6 @@
-﻿namespace eShop.Mvc.DbModels
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace eShop.Mvc.DbModels
 {
     public class ProductImages
     {
