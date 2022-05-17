@@ -4,6 +4,7 @@
     {
         RunOut,
         Enough,
-        Many
+        Many,
+        ReceiptExpected
     }
 }

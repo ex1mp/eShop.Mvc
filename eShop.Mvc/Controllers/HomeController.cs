@@ -39,7 +39,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -52,7 +52,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -65,7 +65,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -78,7 +78,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -91,7 +91,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -104,7 +104,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 },
@@ -120,7 +120,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -133,7 +133,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -146,7 +146,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -159,7 +159,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -172,7 +172,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -185,7 +185,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 },
@@ -201,7 +201,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -214,7 +214,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -227,7 +227,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -240,7 +240,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -253,7 +253,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 },
@@ -269,7 +269,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -282,7 +282,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -295,7 +295,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -308,7 +308,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -321,7 +321,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 },
@@ -337,7 +337,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -350,7 +350,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -363,7 +363,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -376,7 +376,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -389,7 +389,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -402,7 +402,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 },
@@ -418,7 +418,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -431,7 +431,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -444,7 +444,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -457,7 +457,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -470,7 +470,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
@@ -483,7 +483,7 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R18,
+                        AgeRating = Enums.AgeRating.G,
                         imageDataURL = imageDataURL
                     },
                 }

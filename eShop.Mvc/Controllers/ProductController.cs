@@ -27,7 +27,7 @@ namespace eShop.Mvc.Controllers
                     "Action",
                     "Shooter"
                 },
-                AgeRating = Enums.AgeRating.R18,
+                AgeRating = Enums.AgeRating.G,
                 Languages = new List<string>()
                 {
                     "English",

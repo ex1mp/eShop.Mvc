@@ -32,7 +32,7 @@
             if (i != 0)
             {
                 <div class="carousel-item" style="height: 400px;">
-                    <a href="http://estiloasertivo.blogspot.com.es/">
+                    <a asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                         <img src="@Model.BreadcumbProducts[i].imageDataURL" class="d-block w-100" alt="asdasdasd" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
                     </a>
                 </div>
@@ -40,7 +40,7 @@
             else
             {
                 <div class="carousel-item active" style="height: 400px;">
-                    <a href="http://estiloasertivo.blogspot.com.es/">
+                    <a asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                         <img src="@Model.BreadcumbProducts[i].imageDataURL" class="d-block w-100" alt="asdasdasd" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
                     </a>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="content1">
                     @foreach (var item in Model.NewProducts)
                     {
-                        <div class="box">
+                        <a class="box" asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                             <img src="@item.imageDataURL">
                             <div style="margin-left: 25px; margin-top: 0.4rem;">
                                 <div class="navbar-brand">@item.ProductName</div>
@@ -96,13 +96,13 @@
                                 <span class="wdp-ribbon">-@item.DiscountAmount%</span>
                                 <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">@item.Price $</h4>
                             </div>
-                        </div>
+                        </a>
                     }
                 </div>
                 <div class="content1">
                     @foreach (var item in Model.SellsLeaders)
                     {
-                        <div class="box">
+                        <a class="box" asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                             <img src="@item.imageDataURL">
                             <div style="margin-left: 25px; margin-top: 0.4rem;">
                                 <div class="navbar-brand">@item.ProductName</div>
@@ -111,13 +111,13 @@
                                 <span class="wdp-ribbon">-@item.DiscountAmount%</span>
                                 <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">@item.Price $</h4>
                             </div>
-                        </div>
+                        </a>
                     }
                 </div>
                 <div class="content1">
                     @foreach (var item in Model.UpcomingProducts)
                     {
-                        <div class="box">
+                        <a class="box" asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                             <img src="@item.imageDataURL">
                             <div style="margin-left: 25px; margin-top: 0.4rem;">
                                 <div class="navbar-brand">@item.ProductName</div>
@@ -126,7 +126,7 @@
                                 <span class="wdp-ribbon">-@item.DiscountAmount%</span>
                                 <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">@item.Price $</h4>
                             </div>
-                        </div>
+                        </a>
                     }
                 </div>
             </div>
@@ -140,14 +140,14 @@
                 {
                     <div class="container1">
                         <div class="content2">
-                            <div class="box-small">
+                            <a class="box-small" asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                                 <img src="@item.imageDataURL">
                                 <div class="content" style="margin-left: 15px; margin-top: 10px;">
                                     <div class="navbar-brand">@item.ProductName</div>
                                     <span class="rec-sale-small">-@item.DiscountAmount%</span>
                                     <h6 style="position: absolute; right: 0; margin-top: -1.3rem; margin-right: 30px;color: #999;">@item.Price $</h6>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 }
@@ -159,13 +159,13 @@
                 {
                     <div class="container1">
                         <div class="content2">
-                            <div class="box-small">
+                            <a class="box-small" asp-route-productId="asdasdasd" asp-controller="Product" asp-action="Index">
                                 <img src="@item.imageDataURL">
                                 <div class="content" style="margin-left: 15px; margin-top: 10px;">
                                     <div class="navbar-brand">@item.ProductName</div>
                                     <h6 style="position: absolute; right: 0; margin-top: -30px; margin-right: 30px;">@item.Price $</h6>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 }

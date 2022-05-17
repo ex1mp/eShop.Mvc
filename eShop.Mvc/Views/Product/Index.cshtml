@@ -42,7 +42,6 @@
                     <h6 class="col-8" style=" color: White;   margin-bottom: 3px; opacity: 0.9;font-weight: normal;">@Model.Developer</h6>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="col col-8">
@@ -97,7 +96,14 @@
                         @Model.Price$
                     </div>
                 </div>
-                <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
+                @if(@User.Identity.IsAuthenticated){
+                    <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
+                }
+                else
+                {
+                    <input type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 100%;" value="Add to cart">
+                }
+                
             </div>
         </div>
         <div class="description-box col-12 row">
@@ -178,3 +184,20 @@
     </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Attention</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        Only authorized users can use the shopping cart
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Register">Login</a>
+        <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Login">Create new account</a>
+      </div>
+    </div>
+  </div>
+</div>
