@@ -72,9 +72,29 @@
     height: 1rem;
     width: 2.5rem;
     color: #fff;
+    padding: 1px;
     text-align: center;
     font-weight: bold;
-    background-color: red !important;
+}
+
+.R {
+    background-color: #ff392e !important;
+}
+
+.G {
+    background-color: #0cb49c !important;
+}
+
+.PG13 {
+    background-color: #a87dba !important;
+}
+
+.PG {
+    background-color: #f6a488 !important;
+}
+
+.NC17 {
+    background-color: #1094ec !important;
 }
 
 @keyframes fade {
@@ -211,4 +231,9 @@ a:active {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+}
+
+.btn-nav {
+    margin-left: 10px;
+    margin-right: auto;
 }

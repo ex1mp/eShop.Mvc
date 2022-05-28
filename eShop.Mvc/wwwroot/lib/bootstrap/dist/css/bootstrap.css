@@ -3222,10 +3222,10 @@ textarea.form-control-lg {
 .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
 }
-.btn-outline-primary:disabled, .btn-outline-primary.disabled {
-  color: #0d6efd;
-  background-color: transparent;
-}
+    .btn-outline-primary:disabled, .btn-outline-primary.disabled {
+        color: #ff7c3c;
+        background-color: transparent;
+    }
 
 .btn-outline-secondary {
   color: #6c757d;

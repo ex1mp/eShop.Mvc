@@ -1,4 +1,5 @@
 ﻿using eShop.Mvc.Areas.Identity.Data;
+using eShop.Mvc.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireDigit = false; // требуются ли цифры
 }).AddEntityFrameworkStores<IdentityContext>();
 
+builder.Services.AddScoped<ApplicationContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

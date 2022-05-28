@@ -1,14 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace eShop.Mvc.DbModels
+namespace eShop.Mvc.DAL.Entities
 {
     public class SystemRequirments
     {
+        [Key]
         public Guid Id { get; set; }
 
         public Guid ProguctId { get; set; }
 
+        [Required]
         [ForeignKey(nameof(ProguctId))]
         public Product Proguct { get; set; }
 

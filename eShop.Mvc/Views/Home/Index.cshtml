@@ -92,7 +92,7 @@
                             <div style="margin-left: 25px; margin-top: 0.4rem;">
                                 <div class="navbar-brand">@item.ProductName</div>
                                 <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">@String.Join(", ", item.Genres.ToArray())</h5>
-                                <div class="age-rating">@item.AgeRating.ToString()</div>
+                                <div class="age-rating @item.AgeRating.ToString()">@item.AgeRating.ToString()</div>
                                 <span class="wdp-ribbon">-@item.DiscountAmount%</span>
                                 <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">@item.Price $</h4>
                             </div>

@@ -1,4 +1,5 @@
-﻿using eShop.Mvc.Models;
+﻿using eShop.Mvc.DAL;
+using eShop.Mvc.Models;
 using eShop.Mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -9,14 +10,15 @@ namespace eShop.Mvc.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationContext applicationContext)
         {
+            //applicationContext.Genres.ToArray();
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/prototype-2.jpg", FileMode.Open);
+            using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/placeholder.webp", FileMode.Open);
             using var ms = new MemoryStream();
             stream.CopyTo(ms);
 
@@ -31,8 +33,47 @@ namespace eShop.Mvc.Controllers
                 {
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 13,
+                        Genres = new List<string>
+                        {
+                            "Action",
+                            "Strategy"
+                        },
+                        AgeRating = Enums.AgeRating.R,
+                        imageDataURL = imageDataURL
+                    },
+                    new ProductSlimViewModel
+                    {
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 17,
+                        Genres = new List<string>
+                        {
+                            "Action",
+                            "Strategy"
+                        },
+                        AgeRating = Enums.AgeRating.NC17,
+                        imageDataURL = imageDataURL
+                    },
+                    new ProductSlimViewModel
+                    {
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 14,
+                        Genres = new List<string>
+                        {
+                            "Action",
+                            "Strategy"
+                        },
+                        AgeRating = Enums.AgeRating.PG13,
+                        imageDataURL = imageDataURL
+                    },
+                    new ProductSlimViewModel
+                    {
+                        ProductName = "Game",
+                        Price = 25,
                         DiscountAmount = 13,
                         Genres = new List<string>
                         {
@@ -44,60 +85,21 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
+                        ProductName = "Game",
+                        Price = 25,
                         DiscountAmount = 13,
                         Genres = new List<string>
                         {
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.G,
+                        AgeRating = Enums.AgeRating.PG,
                         imageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
-                        Genres = new List<string>
-                        {
-                            "Action",
-                            "Strategy"
-                        },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
-                    },
-                    new ProductSlimViewModel
-                    {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
-                        Genres = new List<string>
-                        {
-                            "Action",
-                            "Strategy"
-                        },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
-                    },
-                    new ProductSlimViewModel
-                    {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
-                        Genres = new List<string>
-                        {
-                            "Action",
-                            "Strategy"
-                        },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
-                    },
-                    new ProductSlimViewModel
-                    {
-                        ProductName = "Gme",
-                        Price = 24,
+                        ProductName = "Game",
+                        Price = 25,
                         DiscountAmount = 13,
                         Genres = new List<string>
                         {
@@ -193,9 +195,9 @@ namespace eShop.Mvc.Controllers
                 {
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -206,9 +208,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -219,9 +221,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -232,9 +234,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -245,9 +247,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -261,9 +263,9 @@ namespace eShop.Mvc.Controllers
                 {
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -274,9 +276,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -287,9 +289,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -300,9 +302,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                        ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",
@@ -313,9 +315,9 @@ namespace eShop.Mvc.Controllers
                     },
                     new ProductSlimViewModel
                     {
-                        ProductName = "Gme",
-                        Price = 24,
-                        DiscountAmount = 13,
+                       ProductName = "Game",
+                        Price = 25,
+                        DiscountAmount = 55,
                         Genres = new List<string>
                         {
                             "Action",

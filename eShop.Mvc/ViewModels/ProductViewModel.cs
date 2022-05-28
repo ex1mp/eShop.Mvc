@@ -1,4 +1,4 @@
-﻿using eShop.Mvc.DbModels;
+﻿using eShop.Mvc.DAL.Entities;
 using eShop.Mvc.Enums;
 
 namespace eShop.Mvc.ViewModels

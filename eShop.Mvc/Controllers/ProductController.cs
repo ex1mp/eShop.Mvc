@@ -1,4 +1,5 @@
-﻿using eShop.Mvc.ViewModels;
+﻿using eShop.Mvc.DAL.Entities;
+using eShop.Mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eShop.Mvc.Controllers
@@ -7,7 +8,7 @@ namespace eShop.Mvc.Controllers
     {
         public IActionResult Index(string productId)
         {
-            using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/elden-ring.jpg", FileMode.Open);
+            using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/placeholder.webp", FileMode.Open);
             using var ms = new MemoryStream();
             stream.CopyTo(ms);
 
@@ -18,7 +19,7 @@ namespace eShop.Mvc.Controllers
             var model = new ProductViewModel()
             {
                 ProductId = new Guid("00000000-0000-0000-0000-000000000000"),
-                ProductName = "ELDEN RING",
+                ProductName = "Game",
                 Availability = Enums.AvailabilityEnum.Enough,
                 Price = 25,
                 DiscountAmount = 13,
@@ -47,7 +48,7 @@ namespace eShop.Mvc.Controllers
                 broken into fragments.An epic drama in which thoughts are presented in the Inter - earth.</p>
                 <p> In addition to the multiplayer mode where you connect and join other users,
                 there is an asynchronous online mode where you can observe the presence of other players.</p> ",
-                SystemRequirments = new DbModels.SystemRequirments()
+                SystemRequirments = new SystemRequirments()
                 {
                     Os = "Windows 10",
                     Processor = "INTEL CORE I5-8400 or AMD RYZEN 3 3300X",
@@ -59,8 +60,16 @@ namespace eShop.Mvc.Controllers
                 imageDataURL = imageDataURL
 
             };
-
+            ViewBag.Model = model;
             return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(string productId)
+        {
+
+            return RedirectToAction("Index","Product", productId);
+        }
+        
     }
 }

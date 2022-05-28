@@ -1,4 +1,6 @@
-﻿@*
+﻿@using eShop.Mvc.ViewModels
+@model PaginatedList<ProductSlimViewModel>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -10,66 +12,103 @@
             <hr style="color: #999; margin-top: -3rem;" />
             <div class="container1" style=" margin-top: 1.3rem;">
                 <div class="content1">
-                    @for (int i = 0; i < 10; i++)
+                    @foreach(var item in Model)
                     {
-                    <div class="box">
-                        <img src="~/img/squad.webp">
-                        <div style="margin-left: 25px; margin-top: 0.4rem;">
-                            <div class="navbar-brand">Squad</div>
-                            <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">Action, Strategy</h5>
-                            <div class="age-rating">R-18</div>
-                            <span class="wdp-ribbon">-25%</span>
-                            <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">25 $</h4>
-                        </div>
-                    </div>
+                         <a class="box" asp-route-productId="@item.ProductId" asp-controller="Product" asp-action="Index">
+                            <img src="@item.imageDataURL">
+                            <div style="margin-left: 25px; margin-top: 0.4rem;">
+                                <div class="navbar-brand">@item.ProductName</div>
+                                <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">@String.Join(", ", item.Genres.ToArray())</h5>
+                                <div class="age-rating @item.AgeRating.ToString()">@item.AgeRating.ToString()</div>
+                                <span class="wdp-ribbon">-@item.DiscountAmount%</span>
+                                <h4 style="position: absolute; right: 0; margin-top: -3.25rem;color: #999; margin-right: 30px;">@item.Price $</h4>
+                            </div>
+                        </a>
+
                     }
                 </div>
             </div>
         </section>
         <div class="col col-md-4">
-            <section class="col-12 box-filter col" style="margin-top: -1.5rem;">
-                <div class="row col-12">
-                    <h5 style="text-align: center;margin-top: 0.8rem; position: relative;">Price</h5>
-                </div>
-                <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
-                    <div class="col col-6">
-                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
-                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 0" required="required">
+            <form asp-action="Index" method="get">
+                @Html.Hidden("IsNewSearch", true)
+                <section class="col-12 box-filter col" style="margin-top: -1.5rem;">
+                    <div class="row col-12">
+                        <h5 style="text-align: center;margin-top: 0.8rem; position: relative;">Name</h5>
                     </div>
-                    <div class="col col-6">
-                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
-                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 500" required="required">
-                    </div>
-                </div>
-                <div class="row col-12">
-                    <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Genres</h5>
-                </div>
-                <div class="col-12 row" style="margin-left:2rem;">
-                    @for (int i = 0; i < 6; i++)
-                    {
-                        <div class="form-check col col-6" style="/*margin-top: 1.5rem;*/">
-                            <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" r>
-                            <label class="form-check-label" for="flexCheckDefault" style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">
-                                I have read
-                            </label>
+                    <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                        <div class="col col-12">
+                            <input type="text" name="gameName" @*type="email"*@ style="border-radius: 10px; margin-top: 0.8rem;" class="form-control" id="exampleFormControlInput1" placeholder="Game name" value="@ViewData["GameName"]">
                         </div>
-                    }
-                </div>
-                <div class="row col-12">
-                    <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Released</h5>
-                </div>
-                <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
-                    <div class="col col-6">
-                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
-                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 2001" required="required">
                     </div>
-                    <div class="col col-6">
-                        <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
-                        <input @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 2022" required="required">
+                    <div class="row col-12">
+                        <h5 style="text-align: center;margin-top: 0.8rem; position: relative;">Price</h5>
                     </div>
-                </div>
-                <input type="submit" class="btn btn-outline-primary col-12" style="margin-top: 2rem;" value="Search">
-            </section>
+                    <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                        <div class="col col-6">
+                            <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
+                            <input type="number" name="MinSum" @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 0" required="required" value="@ViewData["MinSum"]">
+                        </div>
+                        <div class="col col-6">
+                            <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
+                            <input type="number" name="maxSum" @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 500" required="required" value="@ViewData["MaxSum"]">
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Genre</h5>
+                    </div>
+                   <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                        <div class="col col-12">
+                            <input type="text" name="genre" @*type="email"*@ style="border-radius: 10px; margin-top: 0.8rem;" class="form-control" id="exampleFormControlInput1" placeholder="Genre" value="@ViewData["Genre"]">
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <h5 style="text-align: center;margin-top: 0.5rem; position: relative;">Released</h5>
+                    </div>
+                    <div class="row col-12 " style="width: 85%; margin-left: 2rem; margin-top: -1rem;">
+                        <div class="col col-6">
+                            <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Min</h7>
+                            <input type="number" name="startYear" @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="from 2001" required="required" value="@ViewData["StartYear"]">
+                        </div>
+                        <div class="col col-6">
+                            <h7 style=" color: #999; font-size: 0.7rem;  margin-bottom: 2px; margin-left:0.5rem;">Max</h7>
+                            <input type="number" name="endYear" @*type="email"*@ style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="to 2022" required="required" value="@ViewData["EndYear"]">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-outline-primary col-12" style="margin-top: 2rem;" value="Search">
+                </section>
+            </form>
         </div>
     </div>
+</div>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+<div class="row">
+    <div class="col col-3">
+        <form asp-action="Index"
+              asp-route-pageNumber="@(Model.PageIndex - 1)"
+              asp-route-StartDate="@ViewData["StartYear"]"
+              asp-route-EndDate="@ViewData["EndYear"]"
+              asp-route-MinSum="@ViewData["MinSum"]"
+              asp-route-MaxSum="@ViewData["MaxSum"]"
+              asp-route-Genre="@ViewData["Genre"]"
+              asp-route-GameName="@ViewData["GameName"]">
+            <input type="submit" class="btn btn-nav btn-outline-primary @prevDisabled" value="Previous">
+        </form>
+    </div>
+    <div class="col col-3">
+        <form asp-action="Index"
+              asp-route-PageNumber="@(Model.PageIndex + 1)"
+              asp-route-StartDate="@ViewData["StartYear"]"
+              asp-route-EndDate="@ViewData["EndYear"]"
+              asp-route-MinSum="@ViewData["MinSum"]"
+              asp-route-MaxSum="@ViewData["MaxSum"]"
+              asp-route-Genre="@ViewData["Genre"]"
+              asp-route-GameName="@ViewData["GameName"]">
+            <input type="submit" class="btn btn-nav btn-outline-primary @nextDisabled" value="Next" style="margin-left: -8rem;">
+        </form>
+    </div>
+
 </div>

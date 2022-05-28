@@ -1,9 +1,12 @@
 ﻿using eShop.Mvc.Enums;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace eShop.Mvc.DbModels
+namespace eShop.Mvc.DAL.Entities
 {
+    [Table("Games")]
     public class Product
     {
         [Key]
@@ -13,7 +16,7 @@ namespace eShop.Mvc.DbModels
 
         public List<Genre> Genres { get; set; }
 
-        public Guid SystemRequirmentsId { get; set; }
+        public Guid? SystemRequirmentsId { get; set; }
 
         [ForeignKey(nameof(SystemRequirmentsId))]
         public SystemRequirments SystemRequirments { get; set; }
@@ -22,21 +25,21 @@ namespace eShop.Mvc.DbModels
 
         public string Description { get; set; }
 
-        public DateOnly ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         public AgeRating AgeRating { get; set; }
 
-        public Guid DeveloperId { get; set; }
+        public Guid? DeveloperId { get; set; }
 
         [ForeignKey(nameof(DeveloperId))]
         public Company Developer { get; set; }
 
-        public Guid PublisherId { get; set; }
+        public Guid? PublisherId { get; set; }
 
         [ForeignKey(nameof(PublisherId))]
         public Company Publisher { get; set; }
 
-        public Guid ImagesId { get; set; }
+        public Guid? ImagesId { get; set; }
 
         [ForeignKey(nameof(ImagesId))]
         public ProductImages Images { get; set; }

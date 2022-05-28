@@ -2,6 +2,7 @@
 @model ProductViewModel
 @{
 }
+
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/Product.css" asp-append-version="true" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:700" asp-append-version="true" />
@@ -96,20 +97,23 @@
                         @Model.Price$
                     </div>
                 </div>
-                @if(@User.Identity.IsAuthenticated){
-                    <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
+               @* @if (@User.Identity.IsAuthenticated)*@
+                {
+                    <form method="post" asp-action="Delete" asp-route-productId="@Model.ProductId">
+                        <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
+                    </form>
                 }
-                else
+@*                else
                 {
                     <input type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 100%;" value="Add to cart">
-                }
-                
+                }*@
+
             </div>
         </div>
         <div class="description-box col-12 row">
             <h5 class="col col-12" style="margin-top:1.5rem; margin-left: 1.5rem;">Description</h5>
             <h7 style="margin-top:0.5rem; margin-left: 1.5rem; width:96%; margin-bottom: 1rem;">
-               @Html.Raw(Model.Description)
+                @Html.Raw(Model.Description)
             </h7>
         </div>
         <div class="requirements-box col-12 row">
@@ -185,19 +189,19 @@
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content modal-custom">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Attention</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" style="text-align: center;">
-        Only authorized users can use the shopping cart
-      </div>
-      <div class="modal-footer">
-        <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Register">Login</a>
-        <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Login">Create new account</a>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content modal-custom">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Attention</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                Only authorized users can use the shopping cart
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Register">Login</a>
+                <a type="button" class="btn btn-outline-primary mod-button" asp-area="Identity" asp-page="/Account/Login">Create new account</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
