@@ -1,4 +1,4 @@
-﻿namespace eShop.Mvc.Enums
+﻿namespace eShop.Mvc.DAL.Enums
 {
     public enum AvailabilityEnum
     {

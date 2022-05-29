@@ -1,4 +1,4 @@
-﻿@using eShop.Mvc.ViewModels
+﻿@using eShop.Mvc.BLL.ViewModels
 @model ProductViewModel
 @{
 }
@@ -14,7 +14,7 @@
 <div class="row">
     <div class=" col col-4">
         <div>
-            <img class="product-pic" src="@Model.imageDataURL">
+            <img class="product-pic" src="@Model.ImageDataURL">
         </div>
         <div class="about-box">
             <div style="margin-top:2rem; margin-left: 1.5rem;" class="col-12">
@@ -99,7 +99,7 @@
                 </div>
                @* @if (@User.Identity.IsAuthenticated)*@
                 {
-                    <form method="post" asp-action="Delete" asp-route-productId="@Model.ProductId">
+                    <form method="post" asp-action="Post" asp-route-productId="@Model.ProductId">
                         <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
                     </form>
                 }

@@ -9,15 +9,15 @@ namespace eShop.Mvc.DAL.Entities
         [Key]
         public Guid Id { get; set; }
 
-        public Guid ProductId { get; private set; }
+        //public Guid ProductId { get; set; }
 
-        [ForeignKey(nameof(ProductId))]
-        public Product Product { get; set; }
+        //[ForeignKey(nameof(ProductId))]
+        //public Product Product { get; set; }
 
-        public string CatalogImageBase64Data { get; set; }
+        public string CatalogImageDataURL { get; set; }
 
-        public string ImageBase64Data { get; set; }
+        public string ImageDataURL { get; set; }
 
-        public string BreadcumbImageBase64Data { get; set; }
+        public string BreadcumbImageDataURL { get; set; }
     }
 }

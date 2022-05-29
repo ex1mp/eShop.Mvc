@@ -1,5 +1,8 @@
-﻿using eShop.Mvc.ViewModels;
+﻿using eShop.Mvc.BLL.ViewModels;
+using eShop.Mvc.DAL.Enums;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace eShop.Mvc.Controllers
 {
@@ -27,8 +30,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.R,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -40,8 +43,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.NC17,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.NC17,
+                        ImageDataURL = imageDataURL
                     },
                 };
             return View(model);
@@ -50,8 +53,10 @@ namespace eShop.Mvc.Controllers
         [HttpPost]
         public IActionResult Delete(string productId)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
             return RedirectToAction("Index", "Cart");
         }
-
     }
 }

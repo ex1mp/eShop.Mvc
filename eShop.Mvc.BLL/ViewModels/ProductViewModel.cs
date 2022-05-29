@@ -1,7 +1,7 @@
 ﻿using eShop.Mvc.DAL.Entities;
-using eShop.Mvc.Enums;
+using eShop.Mvc.DAL.Enums;
 
-namespace eShop.Mvc.ViewModels
+namespace eShop.Mvc.BLL.ViewModels
 {
     public class ProductViewModel : ProductSlimViewModel
     {

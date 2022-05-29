@@ -1,11 +1,23 @@
-﻿using eShop.Mvc.DAL.Entities;
-using eShop.Mvc.ViewModels;
+﻿using AutoMapper;
+using eShop.Mvc.BLL.ViewModels;
+using eShop.Mvc.DAL;
+using eShop.Mvc.DAL.Entities;
+using eShop.Mvc.DAL.Enums;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace eShop.Mvc.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly ApplicationContext aplicationContext;
+        private readonly IMapper mapper;
+
+        public ProductController(ApplicationContext aplicationContext, IMapper mapper)
+        {
+            this.aplicationContext = aplicationContext;
+            this.mapper = mapper;
+        }
         public IActionResult Index(string productId)
         {
             using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/placeholder.webp", FileMode.Open);
@@ -20,7 +32,7 @@ namespace eShop.Mvc.Controllers
             {
                 ProductId = new Guid("00000000-0000-0000-0000-000000000000"),
                 ProductName = "Game",
-                Availability = Enums.AvailabilityEnum.Enough,
+                Availability = AvailabilityEnum.Enough,
                 Price = 25,
                 DiscountAmount = 13,
                 Genres = new List<string>()
@@ -28,7 +40,7 @@ namespace eShop.Mvc.Controllers
                     "Action",
                     "Shooter"
                 },
-                AgeRating = Enums.AgeRating.G,
+                AgeRating = AgeRating.G,
                 Languages = new List<string>()
                 {
                     "English",
@@ -57,19 +69,29 @@ namespace eShop.Mvc.Controllers
                     DiretX = "Version 12",
                     Hdd = "60 GB"
                 },
-                imageDataURL = imageDataURL
+                ImageDataURL = imageDataURL
 
             };
             ViewBag.Model = model;
-            return View(model);
+
+            var mo = aplicationContext.Catalog.Include(x => x.Product).Include(x => x.Product.Images)
+                .Include(x => x.Product.Genres)
+                .Include(x => x.Product.Languages)
+                .Include(x => x.Product.Publisher)
+                .Include(x => x.Product.Developer)
+                .Include(x => x.Product.SystemRequirments)
+                .FirstOrDefault(x => x.ProductId == new Guid(productId));
+
+            var s = mapper.Map<CatalogItem, ProductViewModel>(mo);
+            return View(s);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post(string productId)
         {
 
-            return RedirectToAction("Index","Product", productId);
+            return RedirectToAction("Index", "Product", productId);
         }
-        
+
     }
 }

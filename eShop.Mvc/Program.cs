@@ -1,4 +1,6 @@
 ﻿using eShop.Mvc.Areas.Identity.Data;
+using eShop.Mvc.BLL.AutomapperProfiles;
+using eShop.Mvc.BLL.Services;
 using eShop.Mvc.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 }).AddEntityFrameworkStores<IdentityContext>();
 
 builder.Services.AddScoped<ApplicationContext>();
+builder.Services.AddScoped<ICatalogService, CatalogService>();
+builder.Services.AddAutoMapper(typeof(AutoMappProfile));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

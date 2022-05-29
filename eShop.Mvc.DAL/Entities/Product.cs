@@ -1,4 +1,4 @@
-﻿using eShop.Mvc.Enums;
+﻿using eShop.Mvc.DAL.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

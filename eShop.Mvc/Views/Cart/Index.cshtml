@@ -1,4 +1,4 @@
-﻿@using eShop.Mvc.ViewModels
+﻿@using eShop.Mvc.BLL.ViewModels
 @model List<ProductSlimViewModel>
 @{
     ViewData["Title"] = "Cart";
@@ -17,7 +17,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="box">
-                        <img src="@item.imageDataURL">
+                        <img src="@item.ImageDataURL">
                         <div style="margin-left: 25px; margin-top: 0.4rem;">
                             <a asp-route-productId="@item.ProductId" asp-controller="Product" asp-action="Index">
                                 <div class="navbar-brand">@item.ProductName</div>

@@ -1,6 +1,6 @@
-﻿using eShop.Mvc.Enums;
+﻿using eShop.Mvc.DAL.Enums;
 
-namespace eShop.Mvc.ViewModels
+namespace eShop.Mvc.BLL.ViewModels
 {
     public class ProductSlimViewModel
     {
@@ -16,6 +16,6 @@ namespace eShop.Mvc.ViewModels
 
         public AgeRating AgeRating { get; set; }
 
-        public string imageDataURL { get; set; }
+        public string ImageDataURL { get; set; }
     }
 }

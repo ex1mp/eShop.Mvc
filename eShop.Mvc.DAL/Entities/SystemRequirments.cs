@@ -9,11 +9,11 @@ namespace eShop.Mvc.DAL.Entities
         [Key]
         public Guid Id { get; set; }
 
-        public Guid ProguctId { get; set; }
+        //public Guid ProguctId { get; set; }
 
-        [Required]
-        [ForeignKey(nameof(ProguctId))]
-        public Product Proguct { get; set; }
+        //[Required]
+        //[ForeignKey(nameof(ProguctId))]
+        //public Product Proguct { get; set; }
 
         public string Os { get; set; }
 

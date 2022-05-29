@@ -1,17 +1,32 @@
-﻿using eShop.Mvc.Models;
-using eShop.Mvc.ViewModels;
+﻿using eShop.Mvc.BLL.Models;
+using eShop.Mvc.BLL.Services;
+using eShop.Mvc.BLL.ViewModels;
+using eShop.Mvc.DAL.Enums;
+using eShop.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eShop.Mvc.Controllers
 {
     public class CatalogController : Controller
     {
-        public IActionResult Index(int startYear, int endYear, decimal minSum, decimal maxSum, string genre, string gameName, int? pageNumber, bool? IsNewSearch)
+        private readonly ICatalogService _catalogService;
+
+        private const int PageSize = 8;
+
+        public CatalogController(ICatalogService catalogService)
         {
-            if (IsNewSearch != null && IsNewSearch == true)
+            _catalogService = catalogService;
+        }
+        public async Task<IActionResult> Index(CatalogRequest catalogRequest)
+        {
+            if (catalogRequest.IsNewSearch != null && catalogRequest.IsNewSearch == true)
             {
-                pageNumber = 1;
+                catalogRequest.PageNumber = 1;
             }
+
+            var products = await _catalogService.GetCatalogProducts(catalogRequest);
+
+            var productsCount = _catalogService.GetCatalogItemsCount();
 
             using var stream = System.IO.File.Open("C://Users/Mikalay/source/repos/eShop.Mvc/eShop.Mvc/wwwroot/img/placeholder.webp", FileMode.Open);
             using var ms = new MemoryStream();
@@ -23,14 +38,13 @@ namespace eShop.Mvc.Controllers
             string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
 
 
-            ViewData["StartYear"] = startYear;
-            ViewData["EndYear"] = endYear;
-            ViewData["MinSum"] = minSum;
-            ViewData["MaxSum"] = maxSum;
-            ViewData["Genre"] = genre;
-            ViewData["GameName"] = gameName;
+            ViewData["StartYear"] = catalogRequest.StartYear;
+            ViewData["EndYear"] = catalogRequest.EndYear;
+            ViewData["MinSum"] = catalogRequest.MinSum;
+            ViewData["MaxSum"] = catalogRequest.MaxSum;
+            ViewData["Genre"] = catalogRequest.Genre;
+            ViewData["GameName"] = catalogRequest.GameName;
 
-            var pageSize = 8;
             var model = new List<ProductSlimViewModel>()
                 {
                     new ProductSlimViewModel
@@ -43,8 +57,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.R,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.R,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -56,8 +70,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.NC17,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.NC17,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -69,8 +83,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG13,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG13,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -82,8 +96,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.G,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -95,8 +109,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG,
+                        ImageDataURL = imageDataURL
                     },
                      new ProductSlimViewModel
                     {
@@ -108,8 +122,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.NC17,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.NC17,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -121,8 +135,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG13,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG13,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -134,8 +148,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.G,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -147,8 +161,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG,
+                        ImageDataURL = imageDataURL
                     },
                      new ProductSlimViewModel
                     {
@@ -160,8 +174,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.NC17,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.NC17,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -173,8 +187,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG13,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG13,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -186,8 +200,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.G,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -199,8 +213,8 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.PG,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.PG,
+                        ImageDataURL = imageDataURL
                     },
                     new ProductSlimViewModel
                     {
@@ -212,11 +226,11 @@ namespace eShop.Mvc.Controllers
                             "Action",
                             "Strategy"
                         },
-                        AgeRating = Enums.AgeRating.G,
-                        imageDataURL = imageDataURL
+                        AgeRating = AgeRating.G,
+                        ImageDataURL = imageDataURL
                     },
                 };
-            return View(PaginatedList<ProductSlimViewModel>.Create(model, 15, pageNumber ?? 1, pageSize));
+            return View(PaginatedList<ProductSlimViewModel>.Create(products, productsCount, catalogRequest.PageNumber ?? 1, PageSize));
         }
     }
 }

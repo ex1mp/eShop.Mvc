@@ -1,4 +1,4 @@
-﻿@using eShop.Mvc.ViewModels
+﻿@using eShop.Mvc.BLL.ViewModels
 @model PaginatedList<ProductSlimViewModel>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,7 +15,7 @@
                     @foreach(var item in Model)
                     {
                          <a class="box" asp-route-productId="@item.ProductId" asp-controller="Product" asp-action="Index">
-                            <img src="@item.imageDataURL">
+                            <img src="@item.ImageDataURL">
                             <div style="margin-left: 25px; margin-top: 0.4rem;">
                                 <div class="navbar-brand">@item.ProductName</div>
                                 <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">@String.Join(", ", item.Genres.ToArray())</h5>
