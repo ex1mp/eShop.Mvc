@@ -97,16 +97,16 @@
                         @Model.Price$
                     </div>
                 </div>
-               @* @if (@User.Identity.IsAuthenticated)*@
+                @if (@User.Identity.IsAuthenticated)
                 {
                     <form method="post" asp-action="Post" asp-route-productId="@Model.ProductId">
                         <input type="submit" class="btn btn-outline-primary" style="width: 100%;" value="Add to cart">
                     </form>
                 }
-@*                else
+             else
                 {
                     <input type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 100%;" value="Add to cart">
-                }*@
+                }
 
             </div>
         </div>

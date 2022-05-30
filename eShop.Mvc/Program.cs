@@ -21,7 +21,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 }).AddEntityFrameworkStores<IdentityContext>();
 
 builder.Services.AddScoped<ApplicationContext>();
-builder.Services.AddScoped<ICatalogService, CatalogService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IRecomedationService, RecomedationService>();
 builder.Services.AddAutoMapper(typeof(AutoMappProfile));
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -10,7 +10,7 @@
 
 <div id="carouselExampleIndicators" class=" carousel @*carousel-dark*@ @*carousel-fade*@ slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        @for (var i = 0; i < Model.BreadcumbProducts.Count; i++)
+        @for (var i = 0; i < Model.BreadcumbProducts.Count(); i++)
         {
             if (i != 0)
             {
@@ -27,13 +27,13 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>*@
     </div>
     <div class="carousel-inner">
-        @for (var i = 0; i < Model.BreadcumbProducts.Count; i++)
+        @for (var i = 0; i < Model.BreadcumbProducts.Count(); i++)
         {
             if (i != 0)
             {
                 <div class="carousel-item" style="height: 400px;">
                     <a asp-route-productId="@Model.BreadcumbProducts[i].ProductId" asp-controller="Product" asp-action="Index">
-                        <img src="@Model.BreadcumbProducts[i].BreadcumbImageDataURL" class="d-block w-100" alt="asdasdasd" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
+                        <img src="@Model.BreadcumbProducts[i].BreadcumbImageDataURL" class="d-block w-100" alt="img" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
                     </a>
                 </div>
             }
@@ -41,7 +41,7 @@
             {
                 <div class="carousel-item active" style="height: 400px;">
                     <a asp-route-productId="@Model.BreadcumbProducts[i].ProductId" asp-controller="Product" asp-action="Index">
-                        <img src="@Model.BreadcumbProducts[i].BreadcumbImageDataURL" class="d-block w-100" alt="asdasdasd" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
+                        <img src="@Model.BreadcumbProducts[i].BreadcumbImageDataURL" class="d-block w-100" alt="img" style="position: absolute; top: 0;left: 0;min-height: 400px; ">
                     </a>
                 </div>
             }

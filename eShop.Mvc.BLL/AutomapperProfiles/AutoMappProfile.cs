@@ -30,11 +30,9 @@ namespace eShop.Mvc.BLL.AutomapperProfiles
                 .ForMember(v => v.Developer, x => x.MapFrom(i => i.Product.Developer.Name))
                 .ForMember(v => v.Publisher, x => x.MapFrom(i => i.Product.Publisher.Name));
 
-            CreateMap<CatalogItem, ProductBreadcumbViewModel>().ForMember(v => v.ProductId, x => x.MapFrom(i => i.ProductId))
-                .ForMember(v => v.ProductName, x => x.MapFrom(i => i.Product.Name))
-                .ForMember(v => v.Price, x => x.MapFrom(i => i.Price))
-                .ForMember(v => v.DiscountAmount, x => x.MapFrom(i => i.Discount))
-                .ForMember(v => v.BreadcumbImageDataURL, x => x.MapFrom(i => i.Product.Images.BreadcumbImageDataURL));
+            CreateMap<Product, ProductBreadcumbViewModel>().ForMember(v => v.ProductId, x => x.MapFrom(i => i.Id))
+                .ForMember(v => v.ProductName, x => x.MapFrom(i => i.Name))
+                .ForMember(v => v.BreadcumbImageDataURL, x => x.MapFrom(i => i.Images.BreadcumbImageDataURL));
         }
     }
 }

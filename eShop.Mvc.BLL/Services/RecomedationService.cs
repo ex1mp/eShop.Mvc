@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using eShop.Mvc.DAL.Entities;
 
 namespace eShop.Mvc.BLL.Services
 {
-    public class RecomedationService
+    public class RecomedationService : IRecomedationService
     {
+        public async Task<IEnumerable<Product>> GetMostSuitableProducts(Guid userId, int count)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
