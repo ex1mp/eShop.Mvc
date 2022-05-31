@@ -5,9 +5,9 @@ namespace eShop.Mvc.BLL.Services
 {
     public interface IProductService
     {
-        Task<List<ProductSlimViewModel>> GetCatalogProducts(CatalogRequest request);
+        Task<List<ProductSlimViewModel>> GetCatalogProductsAsync(CatalogRequest request);
 
-        Task<List<ProductBreadcumbViewModel>> GetRecomendedProducts(string userId, int count);
+        Task<List<ProductBreadcumbViewModel>> GetRecomendedProductsAsync(string userId, int count);
 
         List<ProductSlimViewModel> GetNewProducts(int count);
 
@@ -19,7 +19,8 @@ namespace eShop.Mvc.BLL.Services
 
         List<ProductSlimViewModel> GetUpcomingProducts(int count);
 
-        public ProductViewModel? GetproductById(Guid productId);
+        ProductViewModel? GetproductById(Guid productId);
+
         int GetCatalogItemsCount();
     }
 }

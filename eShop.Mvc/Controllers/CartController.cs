@@ -20,13 +20,24 @@ namespace eShop.Mvc.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public IActionResult Delete(string productId)
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete(string productId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            _cartService.RemoveProductFromCart(new Guid(userId), new Guid(productId));
+            await _cartService.RemoveProductFromCartAsync(new Guid(userId), new Guid(productId));
 
             return RedirectToAction("Index", "Cart");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(string productId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            await _cartService.AddCartItemAsync(new Guid(userId), new Guid(productId));
+
+            return RedirectToAction("Index", "Product", new { productId = productId });
+        }
+
     }
 }

@@ -16,7 +16,7 @@
             <div class="content1">
                 @foreach (var item in Model)
                 {
-                    <div class="box">
+                    <div id="@item.ProductId" class="box">
                         <img src="@item.ImageDataURL">
                         <div style="margin-left: 25px; margin-top: 0.4rem;">
                             <a asp-route-productId="@item.ProductId" asp-controller="Product" asp-action="Index">
@@ -25,11 +25,10 @@
                                 <div class="age-rating @item.AgeRating.ToString()">@item.AgeRating.ToString()</div>
                                 <h4 style="position: absolute; right: 0; margin-top: -3.15rem;color: #999; margin-right: 5rem;">@item.Price $</h4>
                             </a>
-                            @*  <img class="recycle" src="~/img/trash.png" style="width: 1.5rem; height: 1.5rem; margin-left: 41rem; margin-top: -4.5rem;" >*@
-                            <form method="post" asp-action="Delete" asp-route-productId="@item.ProductId">
+                            <form id="@item.ProductId" method="post" asp-controller="Cart" asp-action="Delete" asp-route-productId="@item.ProductId">
                             <div class="close-container">
-                                <input type="submit" class="leftright">
-                                <input type="submit" class="rightleft">
+                                <input id="@item.ProductId" type="submit" class="leftright">
+                                <input id="@item.ProductId" type="submit" class="rightleft">
                             </div>
                             </form>
                         </div>
@@ -40,7 +39,7 @@
 
                     <div class=" col col-4" style="/*margin-left: 25px;*/ margin-top: 10px;">
                         <h5 style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px; margin-left:0.5rem;">Email</h5>
-                        <input type="email" style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required="required">
+                        <input type="email" style="border-radius: 10px;" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"@* required="required"*@>
                     </div>
                     <div class="col row" style="right: 0;">
                         <h4 class="col col-1" style=" margin-top: 2rem; margin-left: auto; margin-right: -28rem;">Total: </h4>  <h4 class="col col-1" style="margin-top: 2rem; margin-left: auto; margin-right: 3rem;">@Model.Sum(x => x.Price)$</h4>
@@ -48,13 +47,13 @@
 
                 </div>
                 <div class="form-check" style="margin-top: 1.5rem;">
-                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" required="required">
+                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" @*required="required"*@>
                     <label class="form-check-label" for="flexCheckDefault" style=" color: #999; font-size: 0.9rem;  margin-bottom: 3px">
                         I have read the user agreement, product description and regional restrictions, privacy policy and agree to the processing of personal data.
                     </label>
                 </div>
             </div>
-            <input type="submit" class="btn btn-outline-primary col-12" style="width: 100%;" value="Pay">
+            <input @*type="submit" *@class="btn btn-outline-primary col-12" style="width: 100%;" value="Pay">
         </div>
 
         @*  <input type="submit" class="btn btn-outline-primary" value="Login">*@

@@ -20,7 +20,7 @@ namespace eShop.Mvc.BLL.Services
             _recomedationService = recomedationService;
         }
 
-        public async Task<List<ProductSlimViewModel>> GetCatalogProducts(CatalogRequest request)
+        public async Task<List<ProductSlimViewModel>> GetCatalogProductsAsync(CatalogRequest request)
         {
             var query = _aplicationContext.Catalog.Include(x => x.Product).Include(x => x.Product.Images).Include(x => x.Product.Genres).Include(x => x.Product.Languages).Where(x => !x.IsDeleted).AsQueryable();
 
@@ -100,7 +100,7 @@ namespace eShop.Mvc.BLL.Services
             return _mapper.Map<List<ProductSlimViewModel>>(query);
         }
 
-        public async Task<List<ProductBreadcumbViewModel>> GetRecomendedProducts(string userId, int count)
+        public async Task<List<ProductBreadcumbViewModel>> GetRecomendedProductsAsync(string userId, int count)
         {
             IEnumerable<Product> products;
 

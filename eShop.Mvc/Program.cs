@@ -4,6 +4,8 @@ using eShop.Mvc.BLL.Services;
 using eShop.Mvc.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("IdentityContextConnection"); ;
 
@@ -20,11 +22,13 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireDigit = false; // требуются ли цифры
 }).AddEntityFrameworkStores<IdentityContext>();
 
-builder.Services.AddScoped<ApplicationContext>();
+builder.Services.AddDbContext<ApplicationContext>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderHistoryService, OrderHistoryService>();
 builder.Services.AddScoped<IRecomedationService, RecomedationService>();
 builder.Services.AddAutoMapper(typeof(AutoMappProfile));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -34,7 +38,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

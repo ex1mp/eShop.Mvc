@@ -25,7 +25,7 @@ namespace eShop.Mvc.Controllers
 
             var homeModel = new HomeViewModel()
             {
-                BreadcumbProducts = await _productService.GetRecomendedProducts(userId, 5),
+                BreadcumbProducts = await _productService.GetRecomendedProductsAsync(userId, 5),
                 LastSales = _productService.GetLastSaledProducts(5),
                 NewProducts = _productService.GetNewProducts(6),
                 Sells40ProcentProducts = _productService.GetProductsOnSales(5, 40),

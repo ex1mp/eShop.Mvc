@@ -7,6 +7,8 @@ namespace eShop.Mvc.BLL.Services
     {
         List<ProductSlimViewModel> GetCartItems(Guid userId);
 
-        Task RemoveProductFromCart(Guid userId, Guid productId);
+        Task RemoveProductFromCartAsync(Guid userId, Guid productId);
+
+        Task AddCartItemAsync(Guid userId, Guid productId);
     }
 }

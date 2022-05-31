@@ -15,6 +15,7 @@ namespace eShop.Mvc.DAL
         public DbSet<ProductImages> ProductImages { get; set; }
         public DbSet<ProductKey> ProductKeys { get; set; }
         public DbSet<SystemRequirments> SystemRequirments { get; set; }
+        public DbSet<GameRating> GamesRatings { get; set; }
 
         public ApplicationContext()
         {

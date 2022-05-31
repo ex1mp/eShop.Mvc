@@ -23,7 +23,7 @@ namespace eShop.Mvc.Controllers
                 catalogRequest.PageNumber = 1;
             }
 
-            var products = await _catalogService.GetCatalogProducts(catalogRequest);
+            var products = await _catalogService.GetCatalogProductsAsync(catalogRequest);
 
             var productsCount = _catalogService.GetCatalogItemsCount();
 
